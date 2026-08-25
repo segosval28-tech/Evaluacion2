@@ -9,8 +9,6 @@ El objetivo del proyecto no es construir modelos predictivos, sino comprender pa
 - `app.py`: aplicación principal en Streamlit.
 - `requirements.txt`: dependencias necesarias para ejecutar la app.
 - `BankMarketing.csv`: dataset del caso de estudio.
-- `data/`: carpeta opcional para organizar una copia del dataset.
-- `docs/informe_final.md`: plantilla del documento final solicitado.
 - `assets/screenshots/`: carpeta para guardar capturas de la aplicación.
 
 ## Funcionalidades
