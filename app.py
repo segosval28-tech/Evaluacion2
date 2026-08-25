@@ -779,7 +779,7 @@ def sidebar() -> str:
         )
         st.divider()
         st.subheader("Datos del autor")
-        st.text_input("Nombre completo", value="Nombre del estudiante", key="author_name")
+        st.text_input("Nombre completo", value="Oswaldo Pasache Raymundo", key="author_name")
         st.text_input("Curso / Especialización", value="Especialización Python for Analytics", key="course_name")
         st.text_input("Año", value="2026", key="project_year")
         st.divider()
