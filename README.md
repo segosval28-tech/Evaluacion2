@@ -93,12 +93,17 @@ Variables principales del caso:
 
 ## Capturas de la App
 
-Guardar aquí las capturas solicitadas para el README:
+### Home
+![Home](Modulo_Home.png)
 
-- `assets/screenshots/home.png`
-- `assets/screenshots/carga-dataset.png`
-- `assets/screenshots/eda.png`
-- `assets/screenshots/conclusiones.png`
+### Carga del Dataset
+![Carga del Dataset](Modulo_Carga-Dataset.png)
+
+### Análisis Exploratorio
+![EDA](Modulo_EDA.png)
+
+### Conclusiones
+![Conclusiones](Modulo_Conclusiones.png)
 
 ## Despliegue en Streamlit Cloud
 
