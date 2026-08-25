@@ -105,19 +105,13 @@ Variables principales del caso:
 ### Conclusiones
 ![Conclusiones](Modulo_Conclusiones.png)
 
-## Despliegue en Streamlit Cloud
 
-1. Subir este repositorio a GitHub.
-2. Entrar a <https://streamlit.io/cloud>.
-3. Crear una nueva aplicación desde el repositorio.
-4. Seleccionar `app.py` como archivo principal.
-5. Publicar y copiar el link público en `docs/informe_final.md`.
 
 ## Links Relevantes
 
 - Repositorio GitHub: https://github.com/segosval28-tech/Evaluacion2/tree/main
 - Aplicación desplegada: https://evaluacion2-oswaldopasache.streamlit.app/
-- Dataset: `BankMarketing.csv`.
+
 
 ## Autor
 
