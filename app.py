@@ -47,6 +47,10 @@ EXPECTED_COLUMNS = {
     "y": "Resultado final de aceptación de campaña",
 }
 
+AUTHOR_NAME = "Oswaldo Pasache Raymundo"
+COURSE_NAME = "Especialización Python for Analytics"
+PROJECT_YEAR = "2026"
+
 
 @dataclass
 class VariableGroups:
@@ -189,31 +193,155 @@ def inject_styles() -> None:
         """
         <style>
         :root {
-            --ink: #18202f;
-            --muted: #5f6b7a;
-            --line: #dce3ec;
+            --ink: #071f38;
+            --muted: #5d6b7a;
+            --line: #d5e2ee;
             --panel: #ffffff;
-            --blue: #2f6fed;
-            --green: #16a085;
+            --navy: #073047;
+            --navy-2: #0b405c;
+            --blue: #005c8a;
+            --sky: #dff7fb;
+            --teal: #078f8c;
+            --teal-dark: #006f75;
+        }
+        html, body, [data-testid="stAppViewContainer"] {
+            background:
+                linear-gradient(180deg, #d9f5fb 0%, #f5fbff 44%, #f7f9fc 100%);
+            color: var(--ink);
         }
         .main .block-container {
-            padding-top: 2rem;
+            padding-top: 3.6rem;
             padding-bottom: 3rem;
-            max-width: 1280px;
+            max-width: 1320px;
         }
         h1, h2, h3 {
             color: var(--ink);
             letter-spacing: 0;
         }
+        h1 {
+            font-size: 2.55rem;
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 1rem;
+        }
+        h2, h3 {
+            font-weight: 750;
+        }
+        [data-testid="stSidebar"] {
+            background: linear-gradient(180deg, #06283d 0%, #0b435d 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        [data-testid="stSidebar"] * {
+            color: #f7fbff;
+        }
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3,
+        [data-testid="stSidebar"] .stMarkdown,
+        [data-testid="stSidebar"] label {
+            color: #f7fbff;
+        }
+        [data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+            color: #b9d4e6;
+        }
+        [data-testid="stSidebar"] div[data-baseweb="radio"] > div {
+            gap: 0.45rem;
+            width: 100%;
+        }
+        [data-testid="stSidebar"] div[role="radiogroup"] label {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            padding: 0.66rem 0.78rem;
+            width: 100%;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        [data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+        [data-testid="stSidebar"] div[role="radiogroup"] label > div:last-child {
+            flex: 1;
+        }
+        [data-testid="stSidebar"] input {
+            background: #f9fcff;
+            color: #071f38;
+            border: 1px solid #f35f63;
+            border-radius: 8px;
+        }
+        [data-testid="stSidebar"] [data-testid="stDivider"] {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
         [data-testid="stMetric"] {
             background: #ffffff;
             border: 1px solid var(--line);
             border-radius: 8px;
-            padding: 14px 16px;
+            padding: 18px 18px;
+            box-shadow: 0 18px 42px rgba(7, 31, 56, 0.08);
+        }
+        [data-testid="stMetric"] label {
+            color: #627184;
+            font-size: 0.82rem;
+        }
+        [data-testid="stMetricValue"] {
+            color: var(--ink);
+            font-weight: 650;
+        }
+        div[data-testid="stVerticalBlock"] > div:has(> div[data-testid="stElementContainer"] div[data-testid="stDataFrame"]) {
+            border-radius: 8px;
         }
         div[data-testid="stDataFrame"] {
             border: 1px solid var(--line);
             border-radius: 8px;
+            box-shadow: 0 14px 34px rgba(7, 31, 56, 0.06);
+        }
+        div[data-testid="stAlert"] {
+            border-radius: 8px;
+            border: 1px solid #c8dff2;
+        }
+        div[data-testid="stFileUploader"] section {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px dashed #71a9c8;
+            border-radius: 8px;
+        }
+        div[data-baseweb="select"] > div,
+        div[data-baseweb="input"] > div,
+        textarea,
+        input {
+            border-radius: 8px;
+        }
+        .stButton > button,
+        [data-testid="stBaseButton-primary"],
+        [data-testid="stBaseButton-secondary"] {
+            background: linear-gradient(135deg, var(--blue), var(--teal));
+            border: 0;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 12px 24px rgba(0, 92, 138, 0.18);
+        }
+        .stButton > button:hover,
+        [data-testid="stBaseButton-primary"]:hover,
+        [data-testid="stBaseButton-secondary"]:hover {
+            background: linear-gradient(135deg, #004b72, var(--teal-dark));
+            color: #ffffff;
+            border: 0;
+        }
+        button[kind="secondary"] {
+            color: #ffffff;
+        }
+        [data-testid="stTabs"] button {
+            border-radius: 8px 8px 0 0;
+            color: #24465f;
+            font-weight: 650;
+        }
+        [data-testid="stTabs"] button[aria-selected="true"] {
+            color: var(--blue);
+        }
+        [data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+            background-color: var(--teal);
         }
         .section-note {
             color: var(--muted);
@@ -224,12 +352,105 @@ def inject_styles() -> None:
         .status-box {
             border: 1px solid var(--line);
             border-radius: 8px;
-            padding: 16px 18px;
-            background: #fbfcff;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 14px 34px rgba(7, 31, 56, 0.06);
         }
         .small-caption {
             color: var(--muted);
             font-size: 0.88rem;
+        }
+        .hero-panel {
+            margin: 0 0 1.35rem 0;
+            padding: 20px 22px;
+            border: 1px solid rgba(159, 196, 216, 0.72);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 20px 46px rgba(7, 31, 56, 0.08);
+        }
+        .hero-kicker {
+            color: var(--blue);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .inline-code {
+            display: inline-block;
+            background: #e8f7f7;
+            color: #006f75;
+            border: 1px solid #b8dddd;
+            border-radius: 6px;
+            padding: 0.05rem 0.34rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9em;
+            font-weight: 800;
+            line-height: 1.35;
+            white-space: nowrap;
+        }
+        .author-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            padding: 0.75rem 0.82rem;
+            margin-bottom: 0.72rem;
+        }
+        .author-box span {
+            display: block;
+            color: #b9d4e6;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        .author-box strong {
+            display: block;
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.25;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1.1fr 1fr;
+            gap: 0.9rem;
+            margin: 1rem 0 1.6rem 0;
+        }
+        .profile-card {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 18px 18px;
+            min-height: 112px;
+            box-shadow: 0 18px 42px rgba(7, 31, 56, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .profile-card span {
+            color: #627184;
+            font-size: 0.82rem;
+            margin-bottom: 0.55rem;
+        }
+        .profile-card strong {
+            color: var(--ink);
+            font-weight: 800;
+            line-height: 1.12;
+            font-size: 1.72rem;
+            overflow-wrap: anywhere;
+        }
+        .profile-card .fit-long {
+            font-size: 1.42rem;
+            line-height: 1.16;
+        }
+        @media (max-width: 900px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-card strong,
+            .profile-card .fit-long {
+                font-size: 1.35rem;
+            }
         }
         </style>
         """,
@@ -273,33 +494,59 @@ def metric_row(data: pd.DataFrame, analyzer: DataAnalyzer) -> None:
     c4.metric("Variables categóricas", len(groups.categorical))
 
 
-def show_home(author: str, course: str, year: str) -> None:
-    st.title("Análisis Exploratorio del Dataset BankMarketing")
+def page_header(title: str, description: str, kicker: str = "BankMarketing EDA") -> None:
     st.markdown(
-        """
-        <p class="section-note">
-        Aplicación interactiva en Streamlit para analizar la última campaña de marketing de una
-        institución financiera. El objetivo es identificar patrones de comportamiento, relaciones
-        entre variables y oportunidades de decisión basadas en datos, sin construir modelos
-        predictivos.
-        </p>
+        f"""
+        <div class="hero-panel">
+            <div class="hero-kicker">{kicker}</div>
+            <h1>{title}</h1>
+            <p class="section-note">{description}</p>
+        </div>
         """,
         unsafe_allow_html=True,
     )
 
-    c1, c2, c3 = st.columns([1.1, 1, 1])
-    c1.metric("Autor", author)
-    c2.metric("Curso", course)
-    c3.metric("Año", year)
+
+def show_home(author: str, course: str, year: str) -> None:
+    page_header(
+        "Análisis Exploratorio del Dataset BankMarketing",
+        """
+        Aplicación interactiva en Streamlit para analizar la última campaña de marketing de una
+        institución financiera. El objetivo es identificar patrones de comportamiento, relaciones
+        entre variables y oportunidades de decisión basadas en datos, sin construir modelos
+        predictivos.
+        """,
+    )
+
+    st.markdown(
+        f"""
+        <div class="profile-grid">
+            <div class="profile-card">
+                <span>Autor</span>
+                <strong>{author}</strong>
+            </div>
+            <div class="profile-card">
+                <span>Curso</span>
+                <strong class="fit-long">{course}</strong>
+            </div>
+            <div class="profile-card">
+                <span>Año</span>
+                <strong>{year}</strong>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     st.subheader("Contexto del dataset")
     st.markdown(
         """
-        El archivo `BankMarketing.csv` contiene información de clientes contactados durante una
-        campaña comercial. La variable objetivo `y` indica si el cliente aceptó la campaña.
+        El archivo <span class="inline-code">BankMarketing.csv</span> contiene información de clientes contactados durante una
+        campaña comercial. La columna objetivo <span class="inline-code">"y"</span> indica si el cliente aceptó la campaña.
         El análisis busca entender qué variables podrían explicar cambios en la efectividad,
         que pasó de 12% a 8% durante los últimos 6 meses según el caso.
-        """
+        """,
+        unsafe_allow_html=True,
     )
 
     left, right = st.columns([1.2, 1])
@@ -332,15 +579,12 @@ def show_home(author: str, course: str, year: str) -> None:
 
 
 def show_upload() -> None:
-    st.title("Carga del Dataset")
-    st.markdown(
+    page_header(
+        "Carga del Dataset",
         """
-        <p class="section-note">
         Antes de ejecutar el análisis, carga el archivo `BankMarketing.csv`. La aplicación valida
         el archivo, muestra una vista previa y confirma sus dimensiones.
-        </p>
         """,
-        unsafe_allow_html=True,
     )
 
     uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
@@ -396,7 +640,10 @@ def show_eda() -> None:
     analyzer = DataAnalyzer(data)
     groups = analyzer.classify_variables()
 
-    st.title("Análisis Exploratorio de Datos")
+    page_header(
+        "Análisis Exploratorio de Datos",
+        "Explora estructura, calidad, distribuciones, relaciones bivariadas y hallazgos clave de la campaña.",
+    )
     metric_row(data, analyzer)
 
     tabs = st.tabs(
@@ -717,33 +964,17 @@ def show_conclusions() -> None:
         return
 
     analyzer = DataAnalyzer(data)
-    st.title("Conclusiones Finales")
-    st.markdown(
+    page_header(
+        "Conclusiones Finales",
         """
-        <p class="section-note">
         Conclusiones orientadas a toma de decisiones comerciales y calidad de análisis,
         derivadas del EDA ejecutado sobre el dataset cargado.
-        </p>
         """,
-        unsafe_allow_html=True,
     )
 
     conclusions = build_conclusions(data, analyzer)
     for index, conclusion in enumerate(conclusions, start=1):
         st.markdown(f"**{index}.** {conclusion}")
-
-    st.subheader("Comentario final para documento PDF")
-    st.markdown(
-        """
-        Los aprendizajes de este módulo fortalecen la capacidad de transformar datos operativos
-        en evidencia útil para la toma de decisiones. En el trabajo diario, estas habilidades
-        permiten validar supuestos, comunicar hallazgos y priorizar acciones comerciales con mayor
-        criterio técnico. Los próximos desafíos consisten en profundizar en automatización,
-        despliegue de aplicaciones analíticas y buenas prácticas de documentación. La metodología
-        práctica del curso contribuyó a mejorar la forma de aprender tecnología al integrar teoría,
-        análisis y construcción de productos funcionales.
-        """
-    )
 
 
 def build_conclusions(data: pd.DataFrame, analyzer: DataAnalyzer) -> list[str]:
@@ -779,9 +1010,23 @@ def sidebar() -> str:
         )
         st.divider()
         st.subheader("Datos del autor")
-        st.text_input("Nombre completo", value="Oswaldo Pasache Raymundo", key="author_name")
-        st.text_input("Curso / Especialización", value="Especialización Python for Analytics", key="course_name")
-        st.text_input("Año", value="2026", key="project_year")
+        st.markdown(
+            f"""
+            <div class="author-box">
+                <span>Autor</span>
+                <strong>{AUTHOR_NAME}</strong>
+            </div>
+            <div class="author-box">
+                <span>Curso</span>
+                <strong>{COURSE_NAME}</strong>
+            </div>
+            <div class="author-box">
+                <span>Año</span>
+                <strong>{PROJECT_YEAR}</strong>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         st.divider()
         data = get_uploaded_data()
         if data is None:
@@ -796,9 +1041,9 @@ def main() -> None:
     inject_styles()
     page = sidebar()
 
-    author = st.session_state.get("author_name", "Nombre del estudiante")
-    course = st.session_state.get("course_name", "Especialización Python for Analytics")
-    year = st.session_state.get("project_year", "2026")
+    author = AUTHOR_NAME
+    course = COURSE_NAME
+    year = PROJECT_YEAR
 
     if page == "Home":
         show_home(author, course, year)
