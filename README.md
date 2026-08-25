@@ -115,8 +115,8 @@ Variables principales del caso:
 
 ## Links Relevantes
 
-- Repositorio GitHub: pendiente de agregar.
-- Aplicación desplegada: pendiente de agregar.
+- Repositorio GitHub: https://github.com/segosval28-tech/Evaluacion2/tree/main
+- Aplicación desplegada: https://evaluacion2-oswaldopasache.streamlit.app/
 - Dataset: `BankMarketing.csv`.
 
 ## Autor
